@@ -9,5 +9,6 @@ class TestMailer < ApplicationMailer
     @greeting = "Hi, I'm trynna get this to work"
 
     mail to: "tsteadman21@yahoo.com"
+    		subject: "I'm being useful with code!"
   end
 end

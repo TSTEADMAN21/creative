@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Emailinfos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emailinfos.each do |emailinfo| %>
+      <tr>
+        <td><%= emailinfo.email_id %></td>
+        <td><%= link_to 'Show', emailinfo %></td>
+        <td><%= link_to 'Edit', edit_emailinfo_path(emailinfo) %></td>
+        <td><%= link_to 'Destroy', emailinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Emailinfo', new_emailinfo_path %>
+
+<p>Who do you want to send an email to?</p> 
+<%= select("emailinfo", "category", @emailinfos.all, {include_blank: true}) %>
